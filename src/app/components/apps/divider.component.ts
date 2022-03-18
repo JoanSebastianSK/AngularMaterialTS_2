@@ -3,12 +3,12 @@ import { Apps } from 'src/app/models/apps.model';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './divider.component.html',
+  templateUrl: 'divider.component.html',
   styleUrls: ['divider.component.css'],
 })
 export class DividerOverviewExample {
 
-    @Input() task: Apps;
+  @Input() task: Apps;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output()

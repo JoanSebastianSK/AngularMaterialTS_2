@@ -49,18 +49,3 @@ img.alineadoTextoImagenCentro{
         margin-left: 25px;
     }
 }
-
-.flex{
-    display: flex;
-
-}
-
-.flex-col{
-    display: flex;
-    flex-direction: column;
-}
-
-.mr-2{
-    margin-right: 2rem;
-}
-

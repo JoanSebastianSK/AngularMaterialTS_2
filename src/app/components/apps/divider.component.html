@@ -1,7 +1,17 @@
-<mat-list>
-    <mat-list-item>Elemento 1</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Elemento 2</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Elemento 3</mat-list-item>
-</mat-list>
+
+    <ng-container>
+
+        <div class="flex">
+            <img class = "mr-2" src="assets/images/WhatsApp.png">
+            <div class = "flex-col">
+                <p class = titulo>{{task?.title}}</p>
+                <p class = "subtitulo">{{task?.subtitle}}</p>
+            </div>
+        
+        </div>
+    
+        <mat-divider></mat-divider>
+
+    </ng-container>
+
+
