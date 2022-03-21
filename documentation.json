@@ -3,10 +3,10 @@
     "interfaces": [
         {
             "name": "Apps",
-            "id": "interface-Apps-8bf46231d08aa5489208f5c296fd2294",
+            "id": "interface-Apps-009dccaf0803a78361ad93b0c0c146da",
             "file": "src/app/models/apps.model.ts",
             "type": "interface",
-            "sourceCode": "export interface Apps {\r\n    id: string;\r\n    title: string;\r\n    state: string;\r\n}",
+            "sourceCode": "export interface Apps {\r\n    id: string;\r\n    title: string;\r\n    subtitle:string;\r\n    state: string;\r\n}",
             "properties": [
                 {
                     "name": "id",
@@ -17,6 +17,13 @@
                 },
                 {
                     "name": "state",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "subtitle",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -41,7 +48,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-4257e18f2247367085204a4ecf82f45f",
+            "id": "component-AppComponent-02006fe71718694fbfe74ec9a90a2772",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -61,6 +68,14 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "myModel",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
                     "name": "title",
                     "defaultValue": "'intro-storybook-angular-template'",
                     "type": "string",
@@ -75,7 +90,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'intro-storybook-angular-template';\r\n}",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'intro-storybook-angular-template';\r\n  myModel = false;\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -84,11 +99,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<app-list></app-list>"
+            "templateData": "<app-task-list></app-task-list>\r\n\r\n<mat-slide-toggle color=\"primary\">\r\n    Slide me to get the primary theme!\r\n  </mat-slide-toggle> <br />\r\n  <br />\r\n  <mat-slide-toggle color=\"accent\">\r\n    Slide me to get the accent theme!\r\n  </mat-slide-toggle>\r\n  <br />\r\n  <br />\r\n  <mat-slide-toggle color=\"warn\">\r\n    Slide me to get the warn theme!\r\n  </mat-slide-toggle>"
         },
         {
             "name": "AppListComponent",
-            "id": "component-AppListComponent-4d1384aff3165737e8f4cb5c70366455",
+            "id": "component-AppListComponent-335f913b59ec2e44ad5528a3f1837bfd",
             "file": "src/app/components/apps-list/apps-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -109,11 +124,11 @@
                     "name": "loading",
                     "defaultValue": "false",
                     "description": "<p>Comprueba si está en estado de carga </p>\n",
-                    "line": 18
+                    "line": 19
                 },
                 {
                     "name": "tasks",
-                    "line": 31,
+                    "line": 32,
                     "type": "[]"
                 }
             ],
@@ -122,18 +137,26 @@
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
                     "description": "<p>Evento para cambiar la tarea a archivada </p>\n",
-                    "line": 28,
+                    "line": 29,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
                     "description": "<p>Evento para cambiar la tarea a anclada </p>\n",
-                    "line": 23,
+                    "line": 24,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
                 {
                     "name": "tasksInOrder",
                     "defaultValue": "[]",
@@ -149,11 +172,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from '../../models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: 'apps-list.component.html',\r\n  styleUrls: ['apps-list.component.css']\r\n})\r\n\r\nexport class AppListComponent {\r\n\r\n    /**\r\n    * Propiedad del componente para definir el orden de las tareas.\r\n    */\r\n    tasksInOrder: Apps[] = [];\r\n\r\n    /** Comprueba si está en estado de carga */\r\n    @Input() loading = false;\r\n\r\n    /** Evento para cambiar la tarea a anclada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onPinTask = new EventEmitter<Event>();\r\n\r\n    /** Evento para cambiar la tarea a archivada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onArchiveTask = new EventEmitter<Event>();\r\n\r\n    @Input()\r\n    set tasks(arr: Apps[]) {\r\n        this.tasksInOrder = [\r\n        ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n        ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n        ];\r\n    }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from '../../models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: 'apps-list.component.html',\r\n  styleUrls: ['apps-list.component.css']\r\n})\r\n\r\nexport class AppListComponent {\r\n\r\n    /**\r\n    * Propiedad del componente para definir el orden de las tareas.\r\n    */\r\n    tasksInOrder: Apps[] = [];\r\n    checked=false;\r\n\r\n    /** Comprueba si está en estado de carga */\r\n    @Input() loading = false;\r\n\r\n    /** Evento para cambiar la tarea a anclada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onPinTask = new EventEmitter<Event>();\r\n\r\n    /** Evento para cambiar la tarea a archivada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onArchiveTask = new EventEmitter<Event>();\r\n\r\n    @Input()\r\n    set tasks(arr: Apps[]) {\r\n        this.tasksInOrder = [\r\n        ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n        ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n        ];\r\n    }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n\r\n.mat-divider {\r\n    display: block;\r\n    margin: 0;\r\n    border-top-width: 1px;\r\n    border-top-style: solid;\r\n    border-top-color: rgba(0,0,0,.12);\r\n}\r\n\r\nimg{\r\n    float: left;\r\n    width: 55px;\r\n\r\n}\r\n\r\n.mat-divider{\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.content{\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n.all{\r\n    background-color: white;\r\n    width: 100%;\r\n    height: 100%;\r\n}",
+                    "data": ".mat-divider {\r\n    display: block;\r\n    margin: 0;\r\n    border-top-width: 1px;\r\n    border-top-style: solid;\r\n    border-top-color: rgba(0,0,0,.12);\r\n}\r\n\r\nimg{\r\n    float: left;\r\n    width: 55px;\r\n    padding-right:15px;\r\n}\r\n\r\n.mat-divider{\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.content{\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n.all{\r\n    background-color: white;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.subtitle{\r\n    color: gray;\r\n}\r\n\r\n.example-form-field {\r\n    margin-right: 20px;\r\n  }",
                     "styleUrl": "apps-list.component.css"
                 }
             ],
@@ -171,7 +194,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 31,
+                        "line": 32,
                         "jsdoctags": [
                             {
                                 "name": "arr",
@@ -184,7 +207,7 @@
                     }
                 }
             },
-            "templateData": "<div class = \"all\">\r\n  <mat-list>\r\n    <div mat-subheader>Apps</div>\r\n      <mat-list-item *ngFor = \"let task of tasksInOrder\">\r\n        <img mat-card-image src=\"http://assets.stickpng.com/images/5ae21cc526c97415d3213554.png\">\r\n        <div class = \"content\">\r\n          <div mat-line>{{task?.title}}</div>\r\n          <div mat-line>{{task?.subtitle}}</div>\r\n        </div>\r\n        <mat-divider></mat-divider>\r\n    </mat-list-item>\r\n  </mat-list>\r\n</div>\r\n\r\n\r\n"
+            "templateData": "<div class = \"all\">\r\n  <mat-list>\r\n    <div mat-subheader>Apps</div>\r\n      <mat-list-item *ngFor = \"let tasks of tasksInOrder\">\r\n        <img mat-card-image src={{tasks?.picture}}>\r\n        <div class = \"content\">\r\n          <div mat-line>{{tasks?.title}}</div>\r\n          <div mat-line class = \"subtitle\">{{tasks?.subtitle}}</div>\r\n        </div>\r\n\r\n        <mat-datepicker-toggle></mat-datepicker-toggle>\r\n        <mat-slide-toggle></mat-slide-toggle>\r\n    </mat-list-item>\r\n  </mat-list>\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -387,7 +410,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class = \"all\">\r\n    <mat-list>\r\n      <div mat-subheader>Apps</div>\r\n          <img mat-card-image src=\"http://assets.stickpng.com/images/5ae21cc526c97415d3213554.png\">\r\n          <div class = \"content\">\r\n            <div mat-line>{{task?.title}}</div>\r\n            <div mat-line>{{task?.subtitle}}</div>\r\n          </div>\r\n          <mat-divider></mat-divider>\r\n    </mat-list>\r\n  </div>\r\n\r\n\r\n\r\n\r\n"
+            "templateData": "<div class = \"all\">\r\n  <mat-list>\r\n      <mat-icon mat-list-icon><img src=\"http://assets.stickpng.com/images/5ae21cc526c97415d3213554.png\"></mat-icon>\r\n      <div class = \"content\">\r\n        <div mat-line>{{task?.title}}</div>\r\n        <div mat-line>{{task?.subtitle}}</div>\r\n    </div>\r\n    <mat-divider></mat-divider>\r\n  </mat-list>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -893,7 +916,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 7,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -902,7 +925,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -910,8 +933,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "AppListComponent",
-                "coveragePercent": 66,
-                "coverageCount": "4/6",
+                "coveragePercent": 57,
+                "coverageCount": "4/7",
                 "status": "good"
             },
             {
@@ -979,7 +1002,7 @@
                 "linktype": "interface",
                 "name": "Apps",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

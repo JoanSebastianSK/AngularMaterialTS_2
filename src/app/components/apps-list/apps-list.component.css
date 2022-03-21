@@ -1,5 +1,3 @@
-
-
 .mat-divider {
     display: block;
     margin: 0;
@@ -31,4 +29,8 @@ img{
 
 .subtitle{
     color: gray;
+}
+
+.actions{
+    margin-left:auto;
 }

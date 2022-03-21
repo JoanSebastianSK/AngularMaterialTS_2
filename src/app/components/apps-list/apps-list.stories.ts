@@ -1,16 +1,15 @@
 import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular';
-
 import { CommonModule } from '@angular/common';
-
 import { AppListComponent } from './apps-list.component';
-
 import { DividerOverviewExample } from '../apps/divider.component';
-
 import * as TaskStories from '../apps/divider.stories';
-
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 export default {
   component: AppListComponent,DividerOverviewExample,
@@ -22,7 +21,7 @@ export default {
         CommonModule,
         BrowserAnimationsModule,
         MatDividerModule,
-        MatListModule],
+        MatListModule,MatDatepickerModule,MatNativeDateModule,MatSlideToggleModule]
     }),
     //👇 Envuelve nuestras historias con un decorador
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

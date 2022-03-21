@@ -1,15 +1,9 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-
 import { CommonModule } from '@angular/common';
-
 import { action } from '@storybook/addon-actions';
-
 import { DividerOverviewExample } from './divider.component';
-
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-
-
 
 export default {
   component: DividerOverviewExample,

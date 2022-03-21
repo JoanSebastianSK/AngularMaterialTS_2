@@ -7,15 +7,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DividerOverviewExample } from './components/apps/divider.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-
+import {ReactiveFormsModule} from '@angular/forms';
 import  { CommonModule }  from '@angular/common';
 import { AppListComponent } from './components/apps-list/apps-list.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     DividerOverviewExample,
-    AppListComponent
+    AppListComponent,
   ],
   imports: [
 
@@ -25,7 +30,13 @@ import { AppListComponent } from './components/apps-list/apps-list.component';
     MatDividerModule,
     MatListModule,
     CommonModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatInputModule,
+    MatButtonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

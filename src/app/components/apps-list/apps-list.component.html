@@ -1,13 +1,16 @@
 <div class = "all">
   <mat-list>
     <div mat-subheader>Apps</div>
-      <mat-list-item *ngFor = "let task of tasksInOrder">
-        <img mat-card-image src={{task?.picture}}>
+      <mat-list-item *ngFor = "let tasks of tasksInOrder">
+        <img mat-card-image src={{tasks?.picture}}>
         <div class = "content">
-          <div mat-line>{{task?.title}}</div>
-          <div mat-line class = "subtitle">{{task?.subtitle}}</div>
+          <div mat-line class = "title">{{tasks?.title}}</div>
+          <div mat-line class = "subtitle">{{tasks?.subtitle}}</div>
         </div>
-        <mat-divider></mat-divider>
+        <div class = "actions">
+          <mat-datepicker-toggle></mat-datepicker-toggle>
+          <mat-slide-toggle></mat-slide-toggle>
+        </div>
     </mat-list-item>
   </mat-list>
 </div>
