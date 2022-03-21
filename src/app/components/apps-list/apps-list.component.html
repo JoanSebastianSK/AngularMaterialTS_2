@@ -1,10 +1,15 @@
-<div class="list-items">
-    <app-list
-      *ngFor="let task of tasksInOrder"
-      [task]="task"
-      (onArchiveTask)="onArchiveTask.emit($event)"
-      (onPinTask)="onPinTask.emit($event)"
-    >
-    </app-list>
+<div class = "all">
+  <mat-list>
+    <div mat-subheader>Apps</div>
+      <mat-list-item *ngFor = "let task of tasksInOrder">
+        <img mat-card-image src={{task?.picture}}>
+        <div class = "content">
+          <div mat-line>{{task?.title}}</div>
+          <div mat-line class = "subtitle">{{task?.subtitle}}</div>
+        </div>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 </div>
+
 

@@ -21,10 +21,9 @@ button{
 img{
     float: left;
     width: 45px;
-    height: 55px;
-    margin-left:5%;
+    margin-left:3%;
     padding-bottom:15px;
-    position: absolute;
+
 }
 
 .mat-divider{
