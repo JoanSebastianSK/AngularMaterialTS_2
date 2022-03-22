@@ -1,27 +1,3 @@
 <app-task-list></app-task-list>
-
-<style>
-    .full-width {
-      width: 100%;
-    }
-  </style>
-  <div class="basic-container">
-    <form [formGroup]="form" novalidate>
-      <div>
-        <mat-slide-toggle
-          formControlName="enable"
-          (change)="onChange($event.checked)">
-          Enable
-        </mat-slide-toggle>
-      </div>
-      <div>
-        <mat-form-field class="full-width">
-          <input
-            matInput
-            formControlName="text"
-            required
-            [placeholder]="text">
-        </mat-form-field>
-      </div>
-    </form>
-  </div>
+<app-list></app-list>
+<router-outlet></router-outlet>

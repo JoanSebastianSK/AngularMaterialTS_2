@@ -1,18 +1,22 @@
-<div class = "all">
-  <mat-list>
-    <div mat-subheader>Apps</div>
-      <mat-list-item *ngFor = "let tasks of tasksInOrder">
-        <img mat-card-image src={{tasks?.picture}}>
-        <div class = "content">
-          <div mat-line class = "title">{{tasks?.title}}</div>
-          <div mat-line class = "subtitle">{{tasks?.subtitle}}</div>
-        </div>
-        <div class = "actions">
-          <mat-datepicker-toggle></mat-datepicker-toggle>
-          <mat-slide-toggle></mat-slide-toggle>
-        </div>
-    </mat-list-item>
-  </mat-list>
+
+
+<div class="container-list" *ngFor = "let tasks of tasksInOrder">
+  <div class ="first" >
+    <img class = "image" src="{{tasks?.picture}}">
+    <div class = "container-list_item">
+        <p class = "title">{{tasks?.title}}</p>
+        <p class = "subtitle">{{tasks?.subtitle}}</p>
+    </div> 
+  </div>
+  <div>
+    <div class = "container-list_item_actions">
+      <button><img class="icon" src="../../../assets/images/calendario.png"></button>
+      <mat-slide-toggle></mat-slide-toggle>
+    </div>
+  </div>
 </div>
+<mat-divider></mat-divider>
+
+
 
 

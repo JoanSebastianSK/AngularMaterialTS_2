@@ -48,7 +48,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-02006fe71718694fbfe74ec9a90a2772",
+            "id": "component-AppComponent-5d705358a4b2b83f4c32b8a23cb4a086",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -68,14 +68,6 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "myModel",
-                    "defaultValue": "false",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                },
-                {
                     "name": "title",
                     "defaultValue": "'intro-storybook-angular-template'",
                     "type": "string",
@@ -90,7 +82,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'intro-storybook-angular-template';\r\n  myModel = false;\r\n}",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'intro-storybook-angular-template';\r\n\r\n  \r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -99,11 +91,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<app-task-list></app-task-list>\r\n\r\n<mat-slide-toggle color=\"primary\">\r\n    Slide me to get the primary theme!\r\n  </mat-slide-toggle> <br />\r\n  <br />\r\n  <mat-slide-toggle color=\"accent\">\r\n    Slide me to get the accent theme!\r\n  </mat-slide-toggle>\r\n  <br />\r\n  <br />\r\n  <mat-slide-toggle color=\"warn\">\r\n    Slide me to get the warn theme!\r\n  </mat-slide-toggle>"
+            "templateData": "<app-task-list></app-task-list>\r\n<app-list></app-list>\r\n<router-outlet></router-outlet>\r\n"
         },
         {
             "name": "AppListComponent",
-            "id": "component-AppListComponent-335f913b59ec2e44ad5528a3f1837bfd",
+            "id": "component-AppListComponent-4d1384aff3165737e8f4cb5c70366455",
             "file": "src/app/components/apps-list/apps-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -124,11 +116,11 @@
                     "name": "loading",
                     "defaultValue": "false",
                     "description": "<p>Comprueba si está en estado de carga </p>\n",
-                    "line": 19
+                    "line": 18
                 },
                 {
                     "name": "tasks",
-                    "line": 32,
+                    "line": 31,
                     "type": "[]"
                 }
             ],
@@ -137,26 +129,18 @@
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
                     "description": "<p>Evento para cambiar la tarea a archivada </p>\n",
-                    "line": 29,
+                    "line": 28,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
                     "description": "<p>Evento para cambiar la tarea a anclada </p>\n",
-                    "line": 24,
+                    "line": 23,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
-                {
-                    "name": "checked",
-                    "defaultValue": "false",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 16
-                },
                 {
                     "name": "tasksInOrder",
                     "defaultValue": "[]",
@@ -172,11 +156,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from '../../models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: 'apps-list.component.html',\r\n  styleUrls: ['apps-list.component.css']\r\n})\r\n\r\nexport class AppListComponent {\r\n\r\n    /**\r\n    * Propiedad del componente para definir el orden de las tareas.\r\n    */\r\n    tasksInOrder: Apps[] = [];\r\n    checked=false;\r\n\r\n    /** Comprueba si está en estado de carga */\r\n    @Input() loading = false;\r\n\r\n    /** Evento para cambiar la tarea a anclada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onPinTask = new EventEmitter<Event>();\r\n\r\n    /** Evento para cambiar la tarea a archivada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onArchiveTask = new EventEmitter<Event>();\r\n\r\n    @Input()\r\n    set tasks(arr: Apps[]) {\r\n        this.tasksInOrder = [\r\n        ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n        ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n        ];\r\n    }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from '../../models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: 'apps-list.component.html',\r\n  styleUrls: ['apps-list.component.css']\r\n})\r\n\r\nexport class AppListComponent {\r\n\r\n    /**\r\n    * Propiedad del componente para definir el orden de las tareas.\r\n    */\r\n    tasksInOrder: Apps[] = [];\r\n\r\n    /** Comprueba si está en estado de carga */\r\n    @Input() loading = false;\r\n\r\n    /** Evento para cambiar la tarea a anclada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onPinTask = new EventEmitter<Event>();\r\n\r\n    /** Evento para cambiar la tarea a archivada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onArchiveTask = new EventEmitter<Event>();\r\n\r\n    @Input()\r\n    set tasks(arr: Apps[]) {\r\n        this.tasksInOrder = [\r\n        ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n        ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n        ];\r\n    }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".mat-divider {\r\n    display: block;\r\n    margin: 0;\r\n    border-top-width: 1px;\r\n    border-top-style: solid;\r\n    border-top-color: rgba(0,0,0,.12);\r\n}\r\n\r\nimg{\r\n    float: left;\r\n    width: 55px;\r\n    padding-right:15px;\r\n}\r\n\r\n.mat-divider{\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.content{\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n.all{\r\n    background-color: white;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.subtitle{\r\n    color: gray;\r\n}\r\n\r\n.example-form-field {\r\n    margin-right: 20px;\r\n  }",
+                    "data": ".title{\r\n    font-weight: bold;\r\n    font-size: 13px;\r\n}\r\n.subtitle{\r\n    color: gray;\r\n    font-size: 12px;\r\n}\r\n\r\n.first{\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n}\r\n\r\n.container-list{\r\n    display: flex;\r\n    background-color: white;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n.container-list_item{\r\n    display: flex;\r\n    flex-direction: column;\r\n    \r\n}\r\n\r\n.container-list_item_actions{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.mat-slide-toggle{\r\n    padding-right: 10px;\r\n    padding-left: 10px;\r\n}\r\n\r\n.mat-divider{\r\n    color: gray;\r\n}\r\n\r\n/*IMAGEN*/\r\n\r\nimg{\r\n    margin-left:1%;\r\n    background-color: white;\r\n}\r\n\r\n.image{\r\n    width: 50px;\r\n    float: left;\r\n    margin-right: 1rem;\r\n    padding-top:10px;\r\n}\r\n\r\n.icon{\r\n    width: 15px;\r\n    height:25px;\r\n}",
                     "styleUrl": "apps-list.component.css"
                 }
             ],
@@ -194,7 +178,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 32,
+                        "line": 31,
                         "jsdoctags": [
                             {
                                 "name": "arr",
@@ -207,7 +191,7 @@
                     }
                 }
             },
-            "templateData": "<div class = \"all\">\r\n  <mat-list>\r\n    <div mat-subheader>Apps</div>\r\n      <mat-list-item *ngFor = \"let tasks of tasksInOrder\">\r\n        <img mat-card-image src={{tasks?.picture}}>\r\n        <div class = \"content\">\r\n          <div mat-line>{{tasks?.title}}</div>\r\n          <div mat-line class = \"subtitle\">{{tasks?.subtitle}}</div>\r\n        </div>\r\n\r\n        <mat-datepicker-toggle></mat-datepicker-toggle>\r\n        <mat-slide-toggle></mat-slide-toggle>\r\n    </mat-list-item>\r\n  </mat-list>\r\n</div>\r\n\r\n\r\n"
+            "templateData": "\r\n\r\n<div class=\"container-list\" *ngFor = \"let tasks of tasksInOrder\">\r\n  <div class =\"first\" >\r\n    <img class = \"image\" src=\"{{tasks?.picture}}\">\r\n    <div class = \"container-list_item\">\r\n        <p class = \"title\">{{tasks?.title}}</p>\r\n        <p class = \"subtitle\">{{tasks?.subtitle}}</p>\r\n    </div> \r\n  </div>\r\n  <div>\r\n    <div class = \"container-list_item_actions\">\r\n      <button><img class=\"icon\" src=\"../../../assets/images/calendario.png\"></button>\r\n      <mat-slide-toggle></mat-slide-toggle>\r\n    </div>\r\n  </div>\r\n</div>\r\n<mat-divider></mat-divider>\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -292,7 +276,7 @@
         },
         {
             "name": "DividerOverviewExample",
-            "id": "component-DividerOverviewExample-8a5a8f7bbf41c0e45178f46cc35147a6",
+            "id": "component-DividerOverviewExample-5a2ce122b9ea8f92ef90883e80653bf1",
             "file": "src/app/components/apps/divider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -308,28 +292,31 @@
                 "divider.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "task",
-                    "line": 11,
-                    "type": "Apps"
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [
                 {
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 19,
+                    "line": 21,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 15,
+                    "line": 17,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "task",
+                    "defaultValue": "{title:\"Hola\",\r\n  subtitle:\"Hola\"\r\n  }",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "onArchive",
@@ -342,20 +329,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 34,
                     "description": "<p>Component method to trigger the onArchive event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 751,
-                                "end": 753,
+                                "pos": 799,
+                                "end": 801,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 745,
-                                "end": 750,
+                                "pos": 793,
+                                "end": 798,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -374,20 +361,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 27,
                     "description": "<p>Component method to trigger the onPin event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 608,
-                                "end": 610,
+                                "pos": 656,
+                                "end": 658,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 602,
-                                "end": 607,
+                                "pos": 650,
+                                "end": 655,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -401,16 +388,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from 'src/app/models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  templateUrl: 'divider.component.html',\r\n  styleUrls: ['divider.component.css'],\r\n})\r\nexport class DividerOverviewExample {\r\n\r\n  @Input() task: Apps;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n  * Component method to trigger the onPin event\r\n  * @param id string\r\n  */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n  * Component method to trigger the onArchive event\r\n  * @param id string\r\n  */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from 'src/app/models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  templateUrl: 'divider.component.html',\r\n  styleUrls: ['divider.component.css'],\r\n})\r\nexport class DividerOverviewExample {\r\n\r\n  //@Input() task: Apps;\r\n  task={title:\"Hola\",\r\n  subtitle:\"Hola\"\r\n  };\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n  * Component method to trigger the onPin event\r\n  * @param id string\r\n  */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n  * Component method to trigger the onArchive event\r\n  * @param id string\r\n  */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".body{\r\n    background-color: white;\r\n}\r\n\r\n.mat-divider {\r\n    display: block;\r\n    margin: 0;\r\n    border-top-width: 1px;\r\n    border-top-style: solid;\r\n    border-top-color: rgba(0,0,0,.12);\r\n}\r\n\r\n.texto{\r\n    margin-left: 15%;\r\n}\r\n\r\nbutton{\r\n    float: right;\r\n}\r\n\r\nimg{\r\n    float: left;\r\n    width: 45px;\r\n    margin-left:3%;\r\n    padding-bottom:15px;\r\n\r\n}\r\n\r\n.mat-divider{\r\n    padding-bottom: 10px;\r\n}\r\n\r\nimg.alineadoTextoImagenCentro{\r\n    vertical-align: middle;\r\n    /* Ojo vertical-align: text-middle no existe*/\r\n}\r\n.titulo{\r\n    font-weight: bold;\r\n    font-size: 13px;\r\n}\r\n.subtitulo{\r\n    color: gray;\r\n    font-size: 12px;\r\n}\r\n\r\n@media screen {\r\n    .titulo,.subtitulo{\r\n        margin-left: 25px;\r\n    }\r\n}\r\n\r\n.flex{\r\n    display: flex;\r\n\r\n}\r\n\r\n.flex-col{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.mr-2{\r\n    margin-right: 2rem;\r\n}\r\n\r\n",
+                    "data": ".title{\r\n    font-weight: bold;\r\n    font-size: 13px;\r\n}\r\n.subtitle{\r\n    color: gray;\r\n    font-size: 12px;\r\n}\r\n\r\n.first{\r\n    display: flex;\r\n    justify-content: baseline;\r\n}\r\n\r\n.container-list{\r\n    display: flex;\r\n    background-color: white;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n\r\n}\r\n\r\n.container-list_item{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.container-list_item_actions{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.mat-slide-toggle{\r\n    padding-right: 10px;\r\n    padding-left: 10px;\r\n}\r\n\r\n/*IMAGEN*/\r\n\r\nimg{\r\n    margin-left:1%;\r\n    background-color: white;\r\n}\r\n\r\n.image{\r\n    width: 50px;\r\n    float: left;\r\n    margin-right: 1rem;\r\n    padding-top:10px;\r\n}\r\n\r\n.icon{\r\n    width: 15px;\r\n    height:25px;\r\n}\r\n\r\n\r\n",
                     "styleUrl": "divider.component.css"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class = \"all\">\r\n  <mat-list>\r\n      <mat-icon mat-list-icon><img src=\"http://assets.stickpng.com/images/5ae21cc526c97415d3213554.png\"></mat-icon>\r\n      <div class = \"content\">\r\n        <div mat-line>{{task?.title}}</div>\r\n        <div mat-line>{{task?.subtitle}}</div>\r\n    </div>\r\n    <mat-divider></mat-divider>\r\n  </mat-list>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+            "templateData": "<div class=\"container-list\">\r\n  <div class =\"first\">\r\n    <img class = \"image\" src=\"assets/images/android.png\">\r\n    <div class = \"container-list_item\">\r\n        <p class = \"title\">{{task?.title}}</p>\r\n        <p class = \"subtitle\">{{task?.subtitle}}</p>\r\n    </div> \r\n  </div>\r\n  <div>\r\n    <div class = \"container-list_item_actions\">\r\n      <button><img class=\"icon\" src=\"../../../assets/images/calendario.png\"></button>\r\n      <mat-slide-toggle></mat-slide-toggle>\r\n    </div>\r\n  </div>\r\n</div>\r\n<mat-divider></mat-divider>\r\n\r\n\r\n\r\n\r\n\r\n    \r\n\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -561,7 +548,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -574,6 +565,35 @@
                             "name": "AppComponent"
                         }
                     ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
                 },
                 {
                     "type": "classes",
@@ -596,7 +616,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/apps-list/apps-list.stories.ts",
+                "file": "src/app/components/apps/divider.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -604,7 +624,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/apps/divider.stories.ts",
+                "file": "src/app/components/apps-list/apps-list.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -724,17 +744,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/apps-list/apps-list.stories.ts",
-                "type": "Story<AppListComponent>",
-                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
+                "file": "src/app/components/apps/divider.stories.ts",
+                "type": "Story<DividerOverviewExample>",
+                "defaultValue": "args => ({\r\n  component: DividerOverviewExample,\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/apps/divider.stories.ts",
-                "type": "Story<DividerOverviewExample>",
-                "defaultValue": "args => ({\r\n  component: DividerOverviewExample,\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
+                "file": "src/app/components/apps-list/apps-list.stories.ts",
+                "type": "Story<AppListComponent>",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
             }
         ],
         "functions": [],
@@ -914,9 +934,27 @@
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
-    "routes": [],
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "Apps",
+                        "component": "AppComponent"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
     "coverage": {
-        "count": 6,
+        "count": 7,
         "status": "low",
         "files": [
             {
@@ -925,7 +963,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -933,8 +971,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "AppListComponent",
-                "coveragePercent": 57,
-                "coverageCount": "4/7",
+                "coveragePercent": 66,
+                "coverageCount": "4/6",
                 "status": "good"
             },
             {

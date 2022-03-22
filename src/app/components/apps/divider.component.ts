@@ -9,7 +9,10 @@ import { Apps } from 'src/app/models/apps.model';
 export class DividerOverviewExample {
 
   @Input() task: Apps;
-
+  // task={title:"Hola",
+  // subtitle:"Hola"
+  // };
+  
   // tslint:disable-next-line: no-output-on-prefix
   @Output()
   onPinTask = new EventEmitter<Event>();
