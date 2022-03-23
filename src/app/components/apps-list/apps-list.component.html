@@ -1,21 +1,62 @@
-
-
 <div class="container-list" *ngFor = "let tasks of tasksInOrder">
-  <div class ="first" >
+  <div class ="container-list-first">
     <img class = "image" src="{{tasks?.picture}}">
     <div class = "container-list_item">
         <p class = "title">{{tasks?.title}}</p>
         <p class = "subtitle">{{tasks?.subtitle}}</p>
     </div> 
   </div>
-  <div>
+  
+  <div class ="container-list-second">
     <div class = "container-list_item_actions">
-      <button><img class="icon" src="../../../assets/images/calendario.png"></button>
+      <button mat-icon-button>
+        <mat-icon>calendar_month</mat-icon>
+      </button>
       <mat-slide-toggle></mat-slide-toggle>
     </div>
   </div>
+
+  <div class ="container-list-third">
+    <mat-divider></mat-divider>
+  </div>
+
 </div>
-<mat-divider></mat-divider>
+
+
+<app-task
+  *ngFor="let task of tasksInOrder"
+  [task]="task"
+  (onArchiveTask)="onArchiveTask.emit($event)"
+  (onPinTask)="onPinTask.emit($event)">
+</app-task>
+<div *ngIf="tasksInOrder.length === 0 && !loading" class="wrapper-message">
+  <span class="icon-check"></span>
+  <div class="title-message">You have no apps</div>
+  <div class="subtitle-message">Sit back and relax</div>
+</div>
+<div *ngIf="loading">
+  <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="loading-item">
+    <span class="glow-checkbox"></span>
+      <span class="glow-text"> <span>Loading</span> <span>cool</span> <span>state</span> </span>
+  </div>
+</div>
+
+
+  
+
+  
+
+         
+       
+
+
+
+  
+
+
+
+
+
 
 
 

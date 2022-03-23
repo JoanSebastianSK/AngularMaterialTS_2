@@ -276,7 +276,7 @@
         },
         {
             "name": "DividerOverviewExample",
-            "id": "component-DividerOverviewExample-5a2ce122b9ea8f92ef90883e80653bf1",
+            "id": "component-DividerOverviewExample-4d405c7ac4630bc0e547fc9966589a82",
             "file": "src/app/components/apps/divider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -292,31 +292,28 @@
                 "divider.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "task",
+                    "line": 11,
+                    "type": "Apps"
+                }
+            ],
             "outputsClass": [
                 {
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 21,
+                    "line": 22,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [
-                {
-                    "name": "task",
-                    "defaultValue": "{title:\"Hola\",\r\n  subtitle:\"Hola\"\r\n  }",
-                    "type": "object",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "onArchive",
@@ -329,20 +326,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 35,
                     "description": "<p>Component method to trigger the onArchive event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 799,
-                                "end": 801,
+                                "pos": 810,
+                                "end": 812,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 793,
-                                "end": 798,
+                                "pos": 804,
+                                "end": 809,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -361,20 +358,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 28,
                     "description": "<p>Component method to trigger the onPin event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 656,
-                                "end": 658,
+                                "pos": 667,
+                                "end": 669,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 650,
-                                "end": 655,
+                                "pos": 661,
+                                "end": 666,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -388,7 +385,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from 'src/app/models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  templateUrl: 'divider.component.html',\r\n  styleUrls: ['divider.component.css'],\r\n})\r\nexport class DividerOverviewExample {\r\n\r\n  //@Input() task: Apps;\r\n  task={title:\"Hola\",\r\n  subtitle:\"Hola\"\r\n  };\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n  * Component method to trigger the onPin event\r\n  * @param id string\r\n  */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n  * Component method to trigger the onArchive event\r\n  * @param id string\r\n  */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from 'src/app/models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  templateUrl: 'divider.component.html',\r\n  styleUrls: ['divider.component.css'],\r\n})\r\nexport class DividerOverviewExample {\r\n\r\n  @Input() task: Apps;\r\n  // task={title:\"Hola\",\r\n  // subtitle:\"Hola\"\r\n  // };\r\n  \r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n  * Component method to trigger the onPin event\r\n  * @param id string\r\n  */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n  * Component method to trigger the onArchive event\r\n  * @param id string\r\n  */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {

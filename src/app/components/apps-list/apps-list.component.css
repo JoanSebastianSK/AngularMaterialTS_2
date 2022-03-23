@@ -7,7 +7,7 @@
     font-size: 12px;
 }
 
-.first{
+.container-list-first{
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -39,8 +39,11 @@
 }
 
 .mat-divider{
-    color: gray;
+    display: flex;
+    align-content: flex-end;
+    color: black;
 }
+
 
 /*IMAGEN*/
 
@@ -60,3 +63,30 @@ img{
     width: 15px;
     height:25px;
 }
+
+@media screen and (max-width:400px){
+
+    .title{
+        
+        font-size: 10px;
+
+    }
+
+    .subtitle{
+        font-size: 8px;
+    } 
+
+    .image{
+        margin-left:3%;
+        width: 30px;
+
+    }
+}
+
+.container-list-third{
+
+    
+}
+
+
+

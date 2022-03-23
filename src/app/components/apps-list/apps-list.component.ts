@@ -15,8 +15,8 @@ export class AppListComponent {
     tasksInOrder: Apps[] = [];
 
     /** Comprueba si está en estado de carga */
-    @Input() loading = false;
-
+    @Input() loading  = false;
+    
     /** Evento para cambiar la tarea a anclada */
     // tslint:disable-next-line: no-output-on-prefix
     @Output()

@@ -10,6 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon'
 
 export default {
   component: AppListComponent,DividerOverviewExample,
@@ -21,7 +22,11 @@ export default {
         CommonModule,
         BrowserAnimationsModule,
         MatDividerModule,
-        MatListModule,MatDatepickerModule,MatNativeDateModule,MatSlideToggleModule]
+        MatListModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSlideToggleModule,
+        MatIconModule]
     }),
     //👇 Envuelve nuestras historias con un decorador
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
@@ -59,4 +64,18 @@ Default.args = {
       id: '6', title: 'Files Go by Google', subtitle: 'Autres', picture: 'https://play-lh.googleusercontent.com/1nfAdJs2Ep2q1skM7QwJ1uHooWSbpFkbIBHhAX6EmdzEKmtk42713TiTU28mWlkcFKPA'
     },
   ],
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  tasks: [],
+  loading: true,
+};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  // Dar forma a las historias a través de la composición de argumentos.
+  // Datos heredados que provienen de la historia de carga.
+  ...Loading.args,
+  loading: false,
 };
