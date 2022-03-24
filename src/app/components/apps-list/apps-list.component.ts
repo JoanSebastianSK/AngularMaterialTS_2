@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Apps } from '../../models/apps.model';
+import { App } from '../../models/apps.model';
 
 @Component({
   selector: 'app-task-list',
@@ -12,10 +12,10 @@ export class AppListComponent {
     /**
     * Propiedad del componente para definir el orden de las tareas.
     */
-    tasksInOrder: Apps[] = [];
+    appsInOrder: App[] = [];
 
     /** Comprueba si está en estado de carga */
-    @Input() loading  = false;
+    @Input() loading:boolean
     
     /** Evento para cambiar la tarea a anclada */
     // tslint:disable-next-line: no-output-on-prefix
@@ -28,8 +28,8 @@ export class AppListComponent {
     onArchiveTask = new EventEmitter<Event>();
 
     @Input()
-    set tasks(arr: Apps[]) {
-        this.tasksInOrder = [
+    set apps(arr: App[]) {
+        this.appsInOrder = [
         ...arr.filter(t => t.state === 'TASK_PINNED'),
         ...arr.filter(t => t.state !== 'TASK_PINNED'),
         ];

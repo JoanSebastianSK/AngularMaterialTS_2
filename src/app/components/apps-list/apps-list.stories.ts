@@ -17,7 +17,7 @@ export default {
   decorators: [
     moduleMetadata({
       //👇 Importa ambos componentes para permitir la composición de componentes con Storybook
-      declarations: [AppListComponent, DividerOverviewExample],
+      declarations: [AppListComponent,DividerOverviewExample],
       imports: [
         CommonModule,
         BrowserAnimationsModule,
@@ -44,7 +44,7 @@ const Template: Story<AppListComponent> = args => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  tasks: [
+  apps: [
     {  
       id: '1', title: 'AR Zoo', subtitle: 'Autres', picture: 'https://cdn.pixabay.com/photo/2018/05/08/21/27/android-3383992_960_720.png'
     },
@@ -68,7 +68,7 @@ Default.args = {
 
 export const Loading = Template.bind({});
 Loading.args = {
-  tasks: [],
+  apps: [],
   loading: true,
 };
 

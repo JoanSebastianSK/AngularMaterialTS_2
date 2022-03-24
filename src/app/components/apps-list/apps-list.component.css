@@ -18,13 +18,11 @@
     background-color: white;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .container-list_item{
     display: flex;
     flex-direction: column;
-    
 }
 
 .container-list_item_actions{
@@ -42,6 +40,10 @@
     display: flex;
     align-content: flex-end;
     color: black;
+}
+
+button{
+    background-color: transparent;
 }
 
 
@@ -67,25 +69,19 @@ img{
 @media screen and (max-width:400px){
 
     .title{
-        
-        font-size: 10px;
-
+        font-size: 12px;
     }
 
     .subtitle{
-        font-size: 8px;
+        font-size: 10px;
     } 
 
     .image{
         margin-left:3%;
         width: 30px;
-
     }
-}
 
-.container-list-third{
 
-    
 }
 
 
