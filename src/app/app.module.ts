@@ -16,7 +16,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import {MatIconModule} from '@angular/material/icon'
     MatInputModule,
     MatButtonModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+
     
   ],
   providers: [],

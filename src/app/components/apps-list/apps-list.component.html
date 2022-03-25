@@ -1,28 +1,27 @@
 <div *ngIf="!loading">
 
   <!-- CONTENT -->
-  <div class="container-list" *ngFor = "let apps of appsInOrder">
+  <div class="container-list" *ngFor = "let app of appsInOrder">
 
     <!-- IMAGE AND TEXT -->
     <div class ="container-list-first">
-      <img class = "image" src="{{apps?.picture}}">
+      <img class = "image" src="{{app?.picture}}">
       <div class = "container-list_item">
-          <p class = "title">{{apps?.title}}</p>
-          <p class = "subtitle">{{apps?.subtitle}}</p>
+          <p class = "title">{{app?.title}}</p>
+          <p class = "subtitle">{{app?.subtitle}}</p>
       </div> 
     </div>
     
     <!-- ACTIONS -->
     <div class ="container-list-second">
       <div class = "container-list_item_actions">
-        <button mat-icon-button><mat-icon>calendar_month</mat-icon></button>
+        <button id="calendar" (click)="calendar.emit(app)"><mat-icon >calendar_month</mat-icon></button>
         <mat-slide-toggle></mat-slide-toggle>
       </div>
     </div>
   </div>
 
 </div>
-
 
 <!-- EMPTY -->
 <div *ngIf="appsInOrder.length === 0 && !loading" class="wrapper-message">
@@ -38,6 +37,8 @@
       <span class="glow-text"> <span>Loading</span> <span>cool</span> <span>state</span> </span>
   </div>
 </div>
+
+
 
 
   

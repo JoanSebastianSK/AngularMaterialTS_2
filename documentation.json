@@ -2,39 +2,46 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "Apps",
-            "id": "interface-Apps-009dccaf0803a78361ad93b0c0c146da",
+            "name": "App",
+            "id": "interface-App-9929f9948270d20d44b9486e1dc34578",
             "file": "src/app/models/apps.model.ts",
             "type": "interface",
-            "sourceCode": "export interface Apps {\r\n    id: string;\r\n    title: string;\r\n    subtitle:string;\r\n    state: string;\r\n}",
+            "sourceCode": "export interface App {\r\n    \r\n    id: string;\r\n    title: string;\r\n    subtitle:string;\r\n    picture:string;\r\n    state: string;\r\n\r\n}",
             "properties": [
                 {
                     "name": "id",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 2
+                    "line": 3
+                },
+                {
+                    "name": "picture",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
                 },
                 {
                     "name": "state",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 7
                 },
                 {
                     "name": "subtitle",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 4
+                    "line": 5
                 },
                 {
                     "name": "title",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 3
+                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -48,7 +55,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-5ba323d247a3ee2d57d27dfc147a5844",
+            "id": "component-AppComponent-a63335635d7404151d1631c5c8c965ab",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -68,6 +75,14 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "apps",
+                    "defaultValue": "[\r\n    {  \r\n      id: '1', title: 'AR Zoo', subtitle: 'Autres', picture: 'https://cdn.pixabay.com/photo/2018/05/08/21/27/android-3383992_960_720.png', state: ''\r\n    },\r\n    {  \r\n      id: '2', title: 'Assistant', subtitle: 'Autres', picture: 'https://cdn.pixabay.com/photo/2018/05/08/21/27/android-3383992_960_720.png', state: ''\r\n    },\r\n    {  \r\n      id: '3', title: 'Calculator', subtitle: 'Education', picture: 'https://www.creativefabrica.com/wp-content/uploads/2019/05/Calculator-icon-by-ahlangraphic-8-580x386.jpg', state: ''\r\n    },\r\n    {  \r\n      id: '4', title: 'Camera', subtitle: 'Autres', picture: 'https://us.123rf.com/450wm/martialred/martialred1507/martialred150700789/42614399-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A8%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E3%82%AB%E3%83%A1%E3%83%A9%E5%86%99%E7%9C%9F%E3%81%AE%E3%83%A9%E3%82%A4%E3%83%B3-%E3%82%A2%E3%83%BC%E3%83%88%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.jpg', state: \"\"\r\n    },\r\n    {  \r\n      id: '5', title: 'Chrome Browser - Google', subtitle: 'Navigateurs', picture: 'data:image/png;base64,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', state: \"\"\r\n    },\r\n    {  \r\n      id: '6', title: 'Files Go by Google', subtitle: 'Autres', picture: 'https://play-lh.googleusercontent.com/1nfAdJs2Ep2q1skM7QwJ1uHooWSbpFkbIBHhAX6EmdzEKmtk42713TiTU28mWlkcFKPA', state: \"\"\r\n    },\r\n  ]",
+                    "type": "App[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
                     "name": "title",
                     "defaultValue": "'intro-storybook-angular-template'",
                     "type": "string",
@@ -82,7 +97,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from './models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'intro-storybook-angular-template';\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { App } from './models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  title = 'intro-storybook-angular-template';\r\n\r\n  apps: App[]= [\r\n    {  \r\n      id: '1', title: 'AR Zoo', subtitle: 'Autres', picture: 'https://cdn.pixabay.com/photo/2018/05/08/21/27/android-3383992_960_720.png', state: ''\r\n    },\r\n    {  \r\n      id: '2', title: 'Assistant', subtitle: 'Autres', picture: 'https://cdn.pixabay.com/photo/2018/05/08/21/27/android-3383992_960_720.png', state: ''\r\n    },\r\n    {  \r\n      id: '3', title: 'Calculator', subtitle: 'Education', picture: 'https://www.creativefabrica.com/wp-content/uploads/2019/05/Calculator-icon-by-ahlangraphic-8-580x386.jpg', state: ''\r\n    },\r\n    {  \r\n      id: '4', title: 'Camera', subtitle: 'Autres', picture: 'https://us.123rf.com/450wm/martialred/martialred1507/martialred150700789/42614399-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A8%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AE%E3%82%AB%E3%83%A1%E3%83%A9%E5%86%99%E7%9C%9F%E3%81%AE%E3%83%A9%E3%82%A4%E3%83%B3-%E3%82%A2%E3%83%BC%E3%83%88%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.jpg', state: \"\"\r\n    },\r\n    {  \r\n      id: '5', title: 'Chrome Browser - Google', subtitle: 'Navigateurs', picture: 'data:image/png;base64,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', state: \"\"\r\n    },\r\n    {  \r\n      id: '6', title: 'Files Go by Google', subtitle: 'Autres', picture: 'https://play-lh.googleusercontent.com/1nfAdJs2Ep2q1skM7QwJ1uHooWSbpFkbIBHhAX6EmdzEKmtk42713TiTU28mWlkcFKPA', state: \"\"\r\n    },\r\n  ]\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -91,11 +106,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<app-list></app-list>\r\n<app-task-list></app-task-list>\r\n"
+            "templateData": "<app-task-list [appsInOrder]=\"apps\"></app-task-list>"
         },
         {
             "name": "AppListComponent",
-            "id": "component-AppListComponent-e4f241d71299b9f721da7f909405debd",
+            "id": "component-AppListComponent-e0b84929d28b78893f3d1019cb4b3ee0",
             "file": "src/app/components/apps-list/apps-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -113,63 +128,72 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "loading",
-                    "defaultValue": "false",
-                    "description": "<p>Comprueba si está en estado de carga </p>\n",
-                    "line": 18
+                    "name": "apps",
+                    "line": 28,
+                    "type": "[]"
                 },
                 {
-                    "name": "tasks",
-                    "line": 31,
-                    "type": "[]"
+                    "name": "appsInOrder",
+                    "defaultValue": "[]",
+                    "line": 13,
+                    "type": "App[]"
+                },
+                {
+                    "name": "loading",
+                    "line": 16,
+                    "type": "boolean"
                 }
             ],
             "outputsClass": [
                 {
+                    "name": "calendar",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 25,
+                    "type": "EventEmitter"
+                },
+                {
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "description": "<p>Evento para cambiar la tarea a archivada </p>\n",
-                    "line": 28,
+                    "line": 24,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "description": "<p>Evento para cambiar la tarea a anclada </p>\n",
-                    "line": 23,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [
+            "propertiesClass": [],
+            "methodsClass": [
                 {
-                    "name": "tasksInOrder",
-                    "defaultValue": "[]",
-                    "type": "Apps[]",
+                    "name": "showElement",
+                    "args": [],
                     "optional": false,
-                    "description": "<p>Propiedad del componente para definir el orden de las tareas.</p>\n",
-                    "line": 15
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35
                 }
             ],
-            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from '../../models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: 'apps-list.component.html',\r\n  styleUrls: ['apps-list.component.css']\r\n})\r\n\r\nexport class AppListComponent {\r\n\r\n    /**\r\n    * Propiedad del componente para definir el orden de las tareas.\r\n    */\r\n    tasksInOrder: Apps[] = [];\r\n\r\n    /** Comprueba si está en estado de carga */\r\n    @Input() loading  = false;\r\n    \r\n    /** Evento para cambiar la tarea a anclada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onPinTask = new EventEmitter<Event>();\r\n\r\n    /** Evento para cambiar la tarea a archivada */\r\n    // tslint:disable-next-line: no-output-on-prefix\r\n    @Output()\r\n    onArchiveTask = new EventEmitter<Event>();\r\n\r\n    @Input()\r\n    set tasks(arr: Apps[]) {\r\n        this.tasksInOrder = [\r\n        ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n        ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n        ];\r\n    }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { App } from '../../models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  templateUrl: 'apps-list.component.html',\r\n  styleUrls: ['apps-list.component.css']\r\n})\r\n\r\nexport class AppListComponent {\r\n\r\n  /*Propiedad del componente para definir el orden de las tareas.*/\r\n  @Input() appsInOrder: App[] = [];\r\n\r\n  /*Comprueba si está en estado de carga */\r\n  @Input() loading:boolean\r\n  \r\n  /* Evento para cambiar la tarea a anclada */\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onPinTask = new EventEmitter<Event>();\r\n  \r\n  /* Evento para cambiar la tarea a archivada */\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output() onArchiveTask = new EventEmitter<Event>();\r\n  @Output() calendar = new EventEmitter<Event>();\r\n  \r\n  @Input()\r\n  set apps(arr: App[]) {\r\n    this.appsInOrder = [\r\n    ...arr.filter(t => t.state === 'TASK_PINNED'),\r\n    ...arr.filter(t => t.state !== 'TASK_PINNED'),\r\n    ];\r\n  }\r\n\r\n  showElement(){\r\n\r\n    console.log(\"Hola\");\r\n    document.getElementById('calendar').style.color=\"red\";\r\n\r\n  }\r\n\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".title{\r\n    font-weight: bold;\r\n    font-size: 13px;\r\n}\r\n.subtitle{\r\n    color: gray;\r\n    font-size: 12px;\r\n}\r\n\r\n.container-list-first{\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n}\r\n\r\n.container-list{\r\n    display: flex;\r\n    background-color: white;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    column-gap:30px;\r\n}\r\n\r\n.container-list_item{\r\n    display: flex;\r\n    flex-direction: column;\r\n    \r\n}\r\n\r\n.container-list_item_actions{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.mat-slide-toggle{\r\n    padding-right: 10px;\r\n    padding-left: 10px;\r\n}\r\n\r\n.mat-divider{\r\n    display: flex;\r\n    align-content: flex-end;\r\n    color: black;\r\n}\r\n\r\nbutton{\r\n    background-color: transparent;\r\n}\r\n\r\n\r\n/*IMAGEN*/\r\n\r\nimg{\r\n    margin-left:1%;\r\n    background-color: white;\r\n}\r\n\r\n.image{\r\n    width: 50px;\r\n    float: left;\r\n    margin-right: 1rem;\r\n    padding-top:10px;\r\n}\r\n\r\n.icon{\r\n    width: 15px;\r\n    height:25px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n",
+                    "data": ".title{\r\n    font-weight: bold;\r\n    font-size: 13px;\r\n}\r\n.subtitle{\r\n    color: gray;\r\n    font-size: 12px;\r\n}\r\n\r\n.container-list-first{\r\n    display: flex;\r\n    align-items: center;\r\n    flex-grow: 1;\r\n}\r\n\r\n.container-list{\r\n    display: flex;\r\n    background-color: white;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.container-list_item{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.container-list_item_actions{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.mat-slide-toggle{\r\n    padding-right: 10px;\r\n    padding-left: 10px;\r\n}\r\n\r\n.mat-divider{\r\n    display: flex;\r\n    align-content: flex-end;\r\n    color: black;\r\n}\r\n\r\nbutton{\r\n    background-color: transparent;\r\n}\r\n\r\n\r\n/*IMAGEN*/\r\n\r\nimg{\r\n    margin-left:1%;\r\n    background-color: white;\r\n}\r\n\r\n.image{\r\n    width: 50px;\r\n    float: left;\r\n    margin-right: 1rem;\r\n    padding-top:10px;\r\n}\r\n\r\n.icon{\r\n    width: 15px;\r\n    height:25px;\r\n}\r\n\r\n@media screen and (max-width:400px){\r\n\r\n    .title{\r\n        font-size: 12px;\r\n    }\r\n\r\n    .subtitle{\r\n        font-size: 10px;\r\n    } \r\n\r\n    .image{\r\n        margin-left:3%;\r\n        width: 30px;\r\n    }\r\n\r\n\r\n}\r\n\r\n\r\n    \r\n\r\n\r\n\r\n\r\n",
                     "styleUrl": "apps-list.component.css"
                 }
             ],
             "stylesData": "",
             "accessors": {
-                "tasks": {
-                    "name": "tasks",
+                "apps": {
+                    "name": "apps",
                     "setSignature": {
-                        "name": "tasks",
+                        "name": "apps",
                         "type": "void",
                         "args": [
                             {
@@ -178,7 +202,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 31,
+                        "line": 28,
                         "jsdoctags": [
                             {
                                 "name": "arr",
@@ -191,7 +215,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"container-list\" *ngFor = \"let tasks of tasksInOrder\">\r\n  <div class =\"container-list-first\">\r\n    <img class = \"image\" src=\"{{tasks?.picture}}\">\r\n    <div class = \"container-list_item\">\r\n        <p class = \"title\">{{tasks?.title}}</p>\r\n        <p class = \"subtitle\">{{tasks?.subtitle}}</p>\r\n    </div> \r\n  </div>\r\n  \r\n  <div class =\"container-list-second\">\r\n    <div class = \"container-list_item_actions\">\r\n      <button mat-icon-button><mat-icon>calendar_month</mat-icon></button>\r\n      <mat-slide-toggle></mat-slide-toggle>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<app-task\r\n  *ngFor=\"let task of tasksInOrder\"\r\n  [task]=\"task\"\r\n  (onArchiveTask)=\"onArchiveTask.emit($event)\"\r\n  (onPinTask)=\"onPinTask.emit($event)\">\r\n</app-task>\r\n<div *ngIf=\"tasksInOrder.length === 0 && !loading\" class=\"wrapper-message\">\r\n  <span class=\"icon-check\"></span>\r\n  <div class=\"title-message\">You have no apps</div>\r\n  <div class=\"subtitle-message\">Sit back and relax</div>\r\n</div>\r\n<div *ngIf=\"loading\">\r\n  <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\r\n    <span class=\"glow-checkbox\"></span>\r\n      <span class=\"glow-text\"> <span>Loading</span> <span>cool</span> <span>state</span> </span>\r\n  </div>\r\n</div>\r\n\r\n\r\n  \r\n\r\n  \r\n\r\n         \r\n       \r\n\r\n\r\n\r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+            "templateData": "<div *ngIf=\"!loading\">\r\n\r\n  <!-- CONTENT -->\r\n  <div class=\"container-list\" *ngFor = \"let app of appsInOrder\">\r\n\r\n    <!-- IMAGE AND TEXT -->\r\n    <div class =\"container-list-first\">\r\n      <img class = \"image\" src=\"{{app?.picture}}\">\r\n      <div class = \"container-list_item\">\r\n          <p class = \"title\">{{app?.title}}</p>\r\n          <p class = \"subtitle\">{{app?.subtitle}}</p>\r\n      </div> \r\n    </div>\r\n    \r\n    <!-- ACTIONS -->\r\n    <div class =\"container-list-second\">\r\n      <div class = \"container-list_item_actions\">\r\n        <button id=\"calendar\" (click)=\"calendar.emit(app)\"><mat-icon >calendar_month</mat-icon></button>\r\n        <mat-slide-toggle></mat-slide-toggle>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n\r\n<!-- EMPTY -->\r\n<div *ngIf=\"appsInOrder.length === 0 && !loading\" class=\"wrapper-message\">\r\n  <span class=\"icon-check\"></span>\r\n  <div class=\"title-message\">You have no apps</div>\r\n  <div class=\"subtitle-message\">Sit back and relax</div>\r\n</div>\r\n\r\n<!-- LOADING -->\r\n<div *ngIf=\"loading\">\r\n  <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\r\n    <span class=\"glow-checkbox\"></span>\r\n      <span class=\"glow-text\"> <span>Loading</span> <span>cool</span> <span>state</span> </span>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n  \r\n\r\n  \r\n\r\n         \r\n       \r\n\r\n\r\n\r\n  \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -276,7 +300,7 @@
         },
         {
             "name": "DividerOverviewExample",
-            "id": "component-DividerOverviewExample-591494428b6d86001733cf6016a1506d",
+            "id": "component-DividerOverviewExample-84323d12ab779f926abeeb5b1d7f9680",
             "file": "src/app/components/apps/divider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -297,13 +321,13 @@
                 {
                     "name": "onArchiveTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 22,
+                    "line": 21,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onPinTask",
                     "defaultValue": "new EventEmitter<Event>()",
-                    "line": 18,
+                    "line": 17,
                     "type": "EventEmitter"
                 }
             ],
@@ -314,7 +338,7 @@
                     "type": "object",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 11
                 }
             ],
             "methodsClass": [
@@ -329,20 +353,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 34,
                     "description": "<p>Component method to trigger the onArchive event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 804,
-                                "end": 806,
+                                "pos": 753,
+                                "end": 755,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 798,
-                                "end": 803,
+                                "pos": 747,
+                                "end": 752,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -361,20 +385,20 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 27,
                     "description": "<p>Component method to trigger the onPin event</p>\n",
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 661,
-                                "end": 663,
+                                "pos": 610,
+                                "end": 612,
                                 "flags": 0,
                                 "escapedText": "id"
                             },
                             "type": "any",
                             "tagName": {
-                                "pos": 655,
-                                "end": 660,
+                                "pos": 604,
+                                "end": 609,
                                 "flags": 0,
                                 "escapedText": "param"
                             },
@@ -388,7 +412,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Apps } from 'src/app/models/apps.model';\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  templateUrl: 'divider.component.html',\r\n  styleUrls: ['divider.component.css'],\r\n})\r\nexport class DividerOverviewExample {\r\n\r\n  // @Input() task: Apps;\r\n  task={title:\"Hola\",\r\n  subtitle:\"Hola\"\r\n  };\r\n  \r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n  * Component method to trigger the onPin event\r\n  * @param id string\r\n  */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n  * Component method to trigger the onArchive event\r\n  * @param id string\r\n  */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-list',\r\n  templateUrl: 'divider.component.html',\r\n  styleUrls: ['divider.component.css'],\r\n})\r\nexport class DividerOverviewExample {\r\n\r\n  // @Input() task: Apps;\r\n  task={title:\"Hola\",\r\n  subtitle:\"Hola\"\r\n  };\r\n  \r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n  * Component method to trigger the onPin event\r\n  * @param id string\r\n  */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n  * Component method to trigger the onArchive event\r\n  * @param id string\r\n  */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -397,7 +421,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"container-list\">\r\n  <div class =\"first\">\r\n    <img class = \"image\" src=\"assets/images/android.png\">\r\n    <div class = \"container-list_item\">\r\n        <p class = \"title\">{{task?.title}}</p>\r\n        <p class = \"subtitle\">{{task?.subtitle}}</p>\r\n    </div> \r\n  </div>\r\n  <div>\r\n    <div class = \"container-list_item_actions\">\r\n      <button mat-icon-button class = \"icon-calendar\"></button>      <mat-slide-toggle></mat-slide-toggle>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    \r\n\r\n\r\n\r\n\r\n\r\n"
+            "templateData": "<div class=\"container-list\">\r\n  <div class =\"first\">\r\n    <img class = \"image\" src=\"assets/images/android.png\">\r\n    <div class = \"container-list_item\">\r\n        <p class = \"title\">{{task?.title}}</p>\r\n        <p class = \"subtitle\">{{task?.subtitle}}</p>\r\n    </div> \r\n  </div>\r\n  <div>\r\n    <div class = \"container-list_item_actions\">\r\n      <button mat-icon-button class = \"icon-calendar\"></button>\r\n      <mat-slide-toggle></mat-slide-toggle>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    \r\n\r\n\r\n\r\n\r\n\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -640,17 +664,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "Large",
@@ -770,7 +794,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/apps-list/apps-list.stories.ts",
                 "type": "Story<AppListComponent>",
-                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n  },\r\n})"
             }
         ],
         "functions": [],
@@ -834,17 +858,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/apps-list/apps-list.stories.ts",
                     "type": "Story<AppListComponent>",
-                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n  },\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -855,6 +869,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -986,7 +1010,7 @@
         ]
     },
     "coverage": {
-        "count": 6,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -995,7 +1019,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1003,9 +1027,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "AppListComponent",
-                "coveragePercent": 66,
-                "coverageCount": "4/6",
-                "status": "good"
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
             },
             {
                 "filePath": "src/app/components/apps-list/apps-list.stories.ts",
@@ -1090,9 +1114,9 @@
                 "filePath": "src/app/models/apps.model.ts",
                 "type": "interface",
                 "linktype": "interface",
-                "name": "Apps",
+                "name": "App",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

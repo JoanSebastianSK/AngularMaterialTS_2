@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { App } from 'src/app/models/apps.model';
 
 @Component({
   selector: 'app-list',
