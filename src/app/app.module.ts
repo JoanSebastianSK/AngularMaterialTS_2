@@ -18,12 +18,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     DividerOverviewExample,
     AppListComponent,
+    DialogComponent,
   ],
   imports: [
 
@@ -42,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatIconModule,
     HttpClientModule,
+    MatDialogModule
 
     
   ],

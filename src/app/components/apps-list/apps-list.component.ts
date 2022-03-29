@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { App } from '../../models/apps.model';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-task-list',
@@ -10,7 +12,7 @@ import { App } from '../../models/apps.model';
 export class AppListComponent {
 
   /*Propiedad del componente para definir el orden de las tareas.*/
-  @Input() appInOrder: App[] = [];
+  @Input() apps: App[] = [];
 
   /*Comprueba si está en estado de carga */
   @Input() loading:boolean
@@ -30,22 +32,19 @@ export class AppListComponent {
   @Output() clickSwitch = new EventEmitter<App>();
   
   @Input()
-  set apps(arr: App[]) {
-    this.appInOrder = [
+  set app(arr: App[]) {
+    this.apps = [
     ...arr.filter(t => t.state === 'TASK_PINNED'),
     ...arr.filter(t => t.state !== 'TASK_PINNED'),
     ];
   }
 
+  constructor(public dialog: MatDialog) {}
+
   toggle(event,app){
-    console.log(event.checked,app);
+
+    console.log(event,app)
+     
   }
-
-  showElement(){
-
-    console.log("Hola");
-    document.getElementById('calendar').style.color="red";
-
-  }
-
+  
 }

@@ -1,9 +1,10 @@
 export interface App {
-    
-    id: string;
+
+    id: number;
     title: string;
     subtitle:string;
     picture:string;
     state: string;
+    enable: boolean;
 
 }

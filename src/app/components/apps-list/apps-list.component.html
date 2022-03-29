@@ -1,7 +1,7 @@
 <div *ngIf="!loading">
 
   <!-- CONTENT -->
-  <div class="container-list" *ngFor = "let app of appInOrder">
+  <div class="container-list" *ngFor = "let app of apps">
 
     <!-- IMAGE AND TEXT -->
     <div class ="container-list-first">
@@ -16,7 +16,9 @@
     <div class ="container-list-second">
       <div class = "container-list_item_actions">
         <button id="calendar" (click)="clickCalendar.emit(app)"><mat-icon >calendar_month</mat-icon></button>
-        <mat-slide-toggle (change)="toggle($event,app)" (click)="clickSwitch.emit(app)"></mat-slide-toggle>
+        <mat-slide-toggle 
+        [(ngModel)] = "app.enable"
+        (change)="toggle($event,app)" (click)="clickSwitch.emit(app)"></mat-slide-toggle>
       </div>
     </div>
   </div>
@@ -24,7 +26,7 @@
 </div>
 
 <!-- EMPTY -->
-<div *ngIf="appInOrder.length === 0 && !loading" class="wrapper-message">
+<div *ngIf="apps.length === 0 && !loading" class="wrapper-message">
   <span class="icon-check"></span>
   <div class="title-message">You have no apps</div>
   <div class="subtitle-message">Sit back and relax</div>
