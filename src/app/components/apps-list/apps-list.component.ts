@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { App } from '../../models/apps.model';
-import { DialogComponent } from '../dialog/dialog.component';
+
 
 @Component({
   selector: 'app-task-list',

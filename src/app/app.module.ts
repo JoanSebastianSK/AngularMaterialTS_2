@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'; 
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
 import { FormsModule } from '@angular/forms'; 
 
@@ -17,9 +17,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormComponent } from './components/form/form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     DividerOverviewExample,
     AppListComponent,
     DialogComponent,
+    FormComponent,
+
   ],
   imports: [
 
@@ -44,12 +47,13 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     AppRoutingModule,
     MatIconModule,
-    HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule
 
-    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[MatDialogModule],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

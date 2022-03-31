@@ -1,9 +1,8 @@
 import { Component} from '@angular/core';
 import { App } from './models/apps.model';
 import { DialogComponent } from './components/dialog/dialog.component';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { MatSlideToggle } from '@angular/material/slide-toggle';
-import { enableDebugTools } from '@angular/platform-browser';
+import { MatDialog, MatDialogModule, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { Days, FormComponent } from './components/form/form.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent {
   title = 'SecureKids';
   public checked: boolean = false;
 
-  state: string;
+  public switchActive: boolean;
 
   apps: App[]= [
     {  
@@ -47,19 +46,19 @@ export class AppComponent {
   */
   openDialog(app:App) {
 
-    this.dialog
-    .open(DialogComponent,
-      {data: {state: this.state}})
-    .afterClosed()
+    let dialogRef = this.dialog
+    .open(DialogComponent);
+    
+    dialogRef.afterClosed()
     .subscribe(      
       (confirm: Boolean) => {
         if(confirm) {
           console.log("HAS CONFIRMADO");
         } else {
           for(let i = 0; i < this.apps.length; i ++){
-
             if(this.apps[i].id == app.id){
               console.log(app.id);
+              this.switchActive = false;
               this.apps[i].enable = !app.enable;
             }
           }
@@ -67,4 +66,29 @@ export class AppComponent {
       }
     )
   };
+
+  /*
+  Esta función abre el componente
+  Formulario con la lista de dias de la semana 
+  y su limite de tiempo
+  */
+
+
+  openForm(){
+
+    let dialogRef = this.dialog
+    .open(FormComponent);
+    
+    dialogRef.afterClosed()
+    .subscribe(      
+      (confirm: Boolean) => {
+        if(confirm) {
+          alert("HAS CONFIRMADO")
+        } else {
+          alert("ADIOS")
+        }
+      }
+    )
+
+  }
 }

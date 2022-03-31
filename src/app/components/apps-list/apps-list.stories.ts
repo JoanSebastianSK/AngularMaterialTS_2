@@ -12,6 +12,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export default {
   component: AppListComponent,DividerOverviewExample,
@@ -29,6 +30,7 @@ export default {
         MatSlideToggleModule,
         MatIconModule,
         MatButtonToggleModule,
+        MatDialogModule
         ]
     }),
     //👇 Envuelve nuestras historias con un decorador

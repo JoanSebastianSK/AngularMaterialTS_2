@@ -1,5 +1,6 @@
 <app-task-list
   [apps]="apps"
   [loading]="false"
+  (clickCalendar)="openForm()"
   (clickSwitch)="openDialog($event)"
 ></app-task-list>

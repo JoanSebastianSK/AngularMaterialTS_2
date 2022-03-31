@@ -9,13 +9,13 @@
       <div class = "container-list_item">
           <p class = "title">{{app?.title}}</p>
           <p class = "subtitle">{{app?.subtitle}}</p>
-      </div> 
+      </div>
     </div>
     
     <!-- ACTIONS -->
     <div class ="container-list-second">
       <div class = "container-list_item_actions">
-        <button id="calendar" (click)="clickCalendar.emit(app)"><mat-icon >calendar_month</mat-icon></button>
+        <button id="calendar" (change)="toggle($event,app)" (click)="clickCalendar.emit(app)"><mat-icon >calendar_month</mat-icon></button>
         <mat-slide-toggle 
         [(ngModel)] = "app.enable"
         (change)="toggle($event,app)" (click)="clickSwitch.emit(app)"></mat-slide-toggle>
