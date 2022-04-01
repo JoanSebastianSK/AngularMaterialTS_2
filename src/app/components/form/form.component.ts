@@ -25,7 +25,6 @@ export class FormComponent implements OnInit {
   }
 
   days: Days[] = [
-
     {id: 1 , title: 'Lunes', time: null, state: false},
     {id: 2, title: 'Martes', time: null, state: false},
     {id: 3, title: 'Miércoles', time: null, state: false},

@@ -13,9 +13,6 @@ import { AppListComponent } from './components/apps-list/apps-list.component';
 export class AppComponent {
 
   title = 'SecureKids';
-  public checked: boolean = false;
-
-  public switchActive: boolean;
 
   apps: App[]= [
     {  
@@ -40,16 +37,14 @@ export class AppComponent {
 
   constructor(public dialog: MatDialog) {}
 
-  /*
-  Esta función abre el componente Dialog para visualizar 
-  una pequeña ventana para confirmar la activación o 
-  desactivación de la App
+  /** 
+  * Esta función abre el componente Dialog para visualizar 
+  * una pequeña ventana para confirmar la activación o 
+  * desactivación de la App
   */
   openDialog(app:App) {
-
     let dialogRef = this.dialog
     .open(DialogComponent);
-    
     dialogRef.afterClosed()
     .subscribe(      
       (confirm: Boolean) => {
@@ -59,7 +54,6 @@ export class AppComponent {
           for(let i = 0; i < this.apps.length; i ++){
             if(this.apps[i].id == app.id){
               console.log(app.id);
-              this.switchActive = false;
               this.apps[i].enable = !app.enable;
             }
           }
@@ -68,28 +62,23 @@ export class AppComponent {
     )
   };
 
-  /*
-  Esta función abre el componente
-  Formulario con la lista de dias de la semana 
-  y su limite de tiempo
+  /**
+  * Esta función abre el componente
+  * Formulario con la lista de dias de la semana 
+  * y su limite de tiempo
   */
-
-
   openForm(){
-
     let dialogRef = this.dialog
     .open(FormComponent);
-    
     dialogRef.afterClosed()
     .subscribe(      
       (confirm: Boolean) => {
         if(confirm) {
-          alert("HAS CONFIRMADO")
+          console.log("Realizado con exito");
         } else {
-          alert("ADIOS")
+          console.log("Realizado con exito");
         }
       }
     )
-
-  }
+  };
 }
