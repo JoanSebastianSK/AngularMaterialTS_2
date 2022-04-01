@@ -31,7 +31,7 @@ export default {
         MatIconModule,
         MatButtonToggleModule,
         MatDialogModule
-        ]
+      ]
     }),
     //👇 Envuelve nuestras historias con un decorador
     componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),

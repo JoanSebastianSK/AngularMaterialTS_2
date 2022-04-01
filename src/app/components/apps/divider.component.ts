@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { App } from 'src/app/models/apps.model';
 
 @Component({
   selector: 'app-list',
@@ -7,10 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class DividerOverviewExample {
 
-  // @Input() task: Apps;
-  task={title:"Hola",
-  subtitle:"Hola"
-  };
+  @Input() task: App;
+
   
   // tslint:disable-next-line: no-output-on-prefix
   @Output()

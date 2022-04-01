@@ -3,6 +3,7 @@ import { App } from './models/apps.model';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { MatDialog, MatDialogModule, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
 import { Days, FormComponent } from './components/form/form.component';
+import { AppListComponent } from './components/apps-list/apps-list.component';
 
 @Component({
   selector: 'app-root',

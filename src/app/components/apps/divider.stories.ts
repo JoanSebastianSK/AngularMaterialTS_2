@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { DividerOverviewExample } from './divider.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 export default {
   component: DividerOverviewExample,

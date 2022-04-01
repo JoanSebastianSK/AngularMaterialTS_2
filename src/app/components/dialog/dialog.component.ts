@@ -22,6 +22,11 @@ export class DialogComponent implements OnInit{
     public dialogRef: MatDialogRef<DialogComponent>
   ) {}
 
+  /**
+   * Esta función la cual
+   * a través de una propiedad en la que está el componente de Dialog, 
+   * se centra a la hora de cerrar el Dialog.
+   */
   closeDialog() {
     this.dialogRef.close();
   }

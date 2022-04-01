@@ -2,11 +2,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { App } from '../../models/apps.model';
 
-
 @Component({
   selector: 'app-task-list',
-  templateUrl: 'apps-list.component.html',
-  styleUrls: ['apps-list.component.css']
+  templateUrl: './apps-list.component.html',
+  styleUrls: ['./apps-list.component.css']
 })
 
 export class AppListComponent {
@@ -15,7 +14,7 @@ export class AppListComponent {
   @Input() apps: App[] = [];
 
   /*Comprueba si está en estado de carga */
-  @Input() loading:boolean
+  @Input() loading:boolean = false;
   
   // /* Evento para cambiar la tarea a anclada */
   // // tslint:disable-next-line: no-output-on-prefix
@@ -41,6 +40,13 @@ export class AppListComponent {
 
   constructor(public dialog: MatDialog) {}
 
+  /**
+  * Esta función muestra por consola el evento
+  * que se produce que en este caso es un switch.
+  * @param event el evento que se produce es cuando se pulsa
+  * sobre el switch e indica el estado que tiene en ese momento
+  * @param app se refiere a la app en el que se ha producido el switch.
+  */
   toggle(event,app){
 
     console.log(event,app)

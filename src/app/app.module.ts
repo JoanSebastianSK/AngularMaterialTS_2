@@ -1,5 +1,6 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
+import { NgModule } from '@angular/core';
+
 import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
@@ -7,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DividerOverviewExample } from './components/apps/divider.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import  { CommonModule }  from '@angular/common';
 import { AppListComponent } from './components/apps-list/apps-list.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -25,11 +26,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
-    DividerOverviewExample,
     AppListComponent,
+    DividerOverviewExample,
     DialogComponent,
     FormComponent,
-
   ],
   imports: [
 
@@ -48,12 +48,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppRoutingModule,
     MatIconModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
 
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents:[MatDialogModule],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 export class AppModule { }
