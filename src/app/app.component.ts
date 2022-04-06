@@ -4,6 +4,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { MatDialog, MatDialogModule, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
 import { Days, FormComponent } from './components/form/form.component';
 import { AppListComponent } from './components/apps-list/apps-list.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,16 @@ export class AppComponent {
     },
   ]
 
+  days: Days[] = [
+    {id: 1 , title: 'Lunes', time: null, state: false},
+    {id: 2, title: 'Martes', time: null, state: false},
+    {id: 3, title: 'Miércoles', time: null, state: false},
+    {id: 4, title: 'Jueves', time: null, state: false},
+    {id: 5, title: 'Viernes', time: null, state: false},
+    {id: 6, title: 'Sabado', time: null, state: false},
+    {id: 7, title: 'Domingo', time: null, state: false}
+  ]
+
   constructor(public dialog: MatDialog) {}
 
   /** 
@@ -49,12 +60,12 @@ export class AppComponent {
     .subscribe(      
       (confirm: Boolean) => {
         if(confirm) {
-          console.log("HAS CONFIRMADO");
+          console.log("Realizado con éxito el cambio del switch");
         } else {
           for(let i = 0; i < this.apps.length; i ++){
             if(this.apps[i].id == app.id){
-              console.log(app.id);
               this.apps[i].enable = !app.enable;
+              console.log("Ningún cambio producido");
             }
           }
         }
@@ -67,16 +78,26 @@ export class AppComponent {
   * Formulario con la lista de dias de la semana 
   * y su limite de tiempo
   */
-  openForm(){
+  openForm(day:Days){
     let dialogRef = this.dialog
     .open(FormComponent);
     dialogRef.afterClosed()
     .subscribe(      
       (confirm: Boolean) => {
         if(confirm) {
-          console.log("Realizado con exito");
+          for(let i = 0; i < this.days.length; i ++){
+            if(this.days[i].id == day.id){
+              this.days[i].time = day.time;
+              console.log("Realizado con exito");
+            }
+          }
         } else {
-          console.log("Realizado con exito");
+          for(let i = 0; i < this.days.length; i ++){
+            if(this.days[i].id == day.id){
+              this.days[i].time = day.time;
+              console.log("Realizado con exito");
+            }
+          }
         }
       }
     )

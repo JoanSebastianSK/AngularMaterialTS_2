@@ -1,42 +1,59 @@
 <h2 mat-dialog-title>App Title</h2>
 
-<div mat-dialog-content>
-    <p>Rellena los días que deseas limitar el uso de la aplicación</p>
-    <br>
-    <!-- CONTENT -->
-    <div class = "content">
-        <div class = "form-content-title">
-            <h3>Días</h3>
-            <h3>Tiempo</h3>
-            <h3>Activar</h3>
-        </div>
-        <mat-divider></mat-divider>
-        <div *ngFor = "let day of days">
-            <div class="form-content">
-                <!-- DAYS -->
-                <div>
-                    <mat-label>{{day?.title}}</mat-label>
-                </div>
-                <!-- TIME -->
-                <div>
-                    <mat-form-field>
-                        <input matInput [(ngModel)] = "day.time">
-                        
-                    </mat-form-field>
-                </div>
-                <!-- ACTIVATE -->
-                <div>
-                    <mat-slide-toggle [(ngModel)]="day.state" (change)="toggle($event,day)"></mat-slide-toggle>
-                </div>
+<div (ngSubmit)="saveData()" validate>
+    <div mat-dialog-content>
+        <p>Rellena los días que deseas limitar el uso de la aplicación</p>
+        <br>
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="form-content-title">
+                <h3>Días</h3>
+                <h3>Tiempo</h3>
+                <h3>Activar</h3>
             </div>
             <mat-divider></mat-divider>
-        </div> 
-    </div>   
+            <div *ngFor="let day of days">
+                <div class="form-content">
+                    <!-- DAYS -->
+                    <div>
+                        <p>{{day?.title}}</p>
+                    </div>
+                    <!-- TIME -->
+                    <div [formGroup]="myForm"  class="form-content-time">
+                        <mat-form-field>
+                            <input 
+                            formControlName="time" 
+                            placeholder="time" 
+                            matInput 
+                            [(ngModel)]="day.time"
+                            [ngModelOptions]="{standalone: true}">
+                        </mat-form-field>
+                        <p>MIN</p>
+                    </div>
+                    <div *ngIf="myForm.get('time').errors && myForm.get('time').dirty">
+                        <p *ngIf="myForm.get('time').hasError('maxlength')">Max of 2 characters</p>
+                        <p *ngIf="myForm.get('time').hasError('max')">Max of 60 min</p>
+                        <p *ngIf="myForm.get('time').hasError('pattern')">No characters</p>
+                    </div>
+                    <!-- ACTIVATE -->
+                    <div>
+                        <mat-slide-toggle [disabled]="myForm.invalid" [(ngModel)]="day.state" (change)="toggle($event,day)"></mat-slide-toggle>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+
+        </div>   
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="false">CANCELAR</button>
+        <button class="button-accept" type="submit" [disabled]="myForm.invalid" mat-button [mat-dialog-close]="true"cdkFocusInitial>Aceptar</button>
+    </div>
 </div>
 
-<div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="false">CANCELAR</button>
-    <button class="button-accept" mat-button [mat-dialog-close]="true"cdkFocusInitial>ACEPTAR</button>
-</div>
+
+
+
+
     
     

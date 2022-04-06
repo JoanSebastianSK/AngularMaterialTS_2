@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, NgModel, Validators } from '@angular/forms';
 import { App } from 'src/app/models/apps.model';
-import { AppListComponent } from '../apps-list/apps-list.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export interface Days {
   id:number;
@@ -16,13 +18,29 @@ export interface Days {
 })
 export class FormComponent implements OnInit {
 
-  constructor() {}
-
-  //Switch
-  @Output() clickSwitch = new EventEmitter<App>();
 
   ngOnInit(): void {
   }
+
+  //Time Limit
+  myForm: FormGroup;
+
+  constructor( public fb: FormBuilder){
+    this.myForm = this.fb.group({
+      time: ['', [Validators.maxLength(2), Validators.max(60), Validators.min(1), Validators.pattern(/^[0-9]\d*$/)]],
+    });
+  }
+
+  /**
+   * Esta función guarda el valor que el usuario 
+   * introduzca en el campo de tiempo de app
+   */
+  saveData(){
+    console.log(this.myForm.value);
+  }
+
+  //Switch
+  @Output() clickSwitch = new EventEmitter<App>();
 
   days: Days[] = [
     {id: 1 , title: 'Lunes', time: null, state: false},
@@ -46,5 +64,4 @@ export class FormComponent implements OnInit {
     console.log(event,days)
      
   }
-  
 }

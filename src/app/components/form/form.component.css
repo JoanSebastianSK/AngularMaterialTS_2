@@ -1,29 +1,19 @@
-.form-content{
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-text-align: center;
-}
-
+/*CONTENIDO*/
 .content{
     display: flex;
     flex-direction: column;
 }
-.mat-form-field{
-    width:100px;
-    color: black;
-    font-weight: bold;
-}
 
-.button-accept{
-    color: purple;
-}
-.form-content-title{
+.form-content{
     display: flex;
     justify-content: space-between;
-    font-weight: bolder;
     text-align: center;
+    align-items: baseline;
+}
+
+p{
+    padding-top: 28px;
+    padding-left: 10px;
 }
 
 h3{
@@ -31,11 +21,37 @@ h3{
     font-weight: bold;
 }
 
+/*FORMULARIO INPUT*/
+.mat-form-field{
+    width:50px;
+    color: black;
+    font-weight: bold;
+}
+
+/*BOTÓN ACEPTAR*/
+.button-accept{
+    color: purple;
+}
+
+/*Titulos Formulario*/
+.form-content-title{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/*ACCIONES*/
 .mat-dialog-actions{
     display: flex;
     justify-content: space-between;
 }
 
+/*SECCIÓN TIEMPO LÍMITE*/
+.form-content-time{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
 
-
-
+}
